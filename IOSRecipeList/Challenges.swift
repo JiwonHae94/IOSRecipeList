@@ -1,52 +1,12 @@
 //
-//  ContentView.swift
+//  Challenges.swift
 //  IOSRecipeList
 //
 //  Created by Jiwon_Hae on 2021/11/03.
 //
 
+import Foundation
 import SwiftUI
-
-struct ContentView: View {
-    @State var array = [Int]()
-    
-    var body: some View {
-        VStack{
-            List(array, id:\.self){ arrayElement in
-                Text("\(arrayElement)")
-            }
-            HStack{
-                Button{
-                    let randomInt = Int.random(in: 1...10)
-                    
-                    if !array.contains(7){
-                        array.append(randomInt)
-                    }
-                    
-                } label:{
-                    Text("1st")
-                }
-                
-                
-                Button{
-                    for idx in 0..<array.count{
-                       array[idx] += 1
-                    }
-                } label:{
-                    Text("2nd")
-                }
-            
-            
-                Button{
-                    array.removeAll()
-                } label:{
-                    Text("3rd")
-                }
-            }
-        }
-        
-    }
-}
 
 struct Lesson04 : View{
     @State var array = [Int]()
@@ -112,10 +72,4 @@ struct Lesson03 : View{
         }
     }
     
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
 }

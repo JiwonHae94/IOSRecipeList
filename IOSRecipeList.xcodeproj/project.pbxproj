@@ -11,6 +11,7 @@
 		7C1EBC63273450F8007E1EC1 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1EBC62273450F8007E1EC1 /* Recipe.swift */; };
 		7C1EBC6527345360007E1EC1 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1EBC6427345360007E1EC1 /* RecipeViewModel.swift */; };
 		7C1EBC69273454D3007E1EC1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1EBC68273454D3007E1EC1 /* DataService.swift */; };
+		7C1EBC6B273459F7007E1EC1 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1EBC6A273459F7007E1EC1 /* RecipeDetailView.swift */; };
 		7CCD5FE62731B49700DDF8C7 /* IOSRecipeListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCD5FE52731B49700DDF8C7 /* IOSRecipeListApp.swift */; };
 		7CCD5FE82731B49700DDF8C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCD5FE72731B49700DDF8C7 /* ContentView.swift */; };
 		7CCD5FEA2731B49900DDF8C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CCD5FE92731B49900DDF8C7 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		7C1EBC62273450F8007E1EC1 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		7C1EBC6427345360007E1EC1 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		7C1EBC68273454D3007E1EC1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		7C1EBC6A273459F7007E1EC1 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		7CCD5FE22731B49700DDF8C7 /* IOSRecipeList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSRecipeList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CCD5FE52731B49700DDF8C7 /* IOSRecipeListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSRecipeListApp.swift; sourceTree = "<group>"; };
 		7CCD5FE72731B49700DDF8C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				7CCD5FE72731B49700DDF8C7 /* ContentView.swift */,
+				7C1EBC6A273459F7007E1EC1 /* RecipeDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C1EBC6B273459F7007E1EC1 /* RecipeDetailView.swift in Sources */,
 				7CCD5FE82731B49700DDF8C7 /* ContentView.swift in Sources */,
 				7CCD5FE62731B49700DDF8C7 /* IOSRecipeListApp.swift in Sources */,
 				7CCD60102731BB7700DDF8C7 /* Challenges.swift in Sources */,
