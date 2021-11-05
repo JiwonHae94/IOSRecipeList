@@ -13,7 +13,7 @@ struct Recipe : Decodable, Identifiable {
     var name, image, description, prepTime, cookTime, totalTime : String
     var featured : Bool
     var servings : Int
-    var ingredients : [String]
+    var ingredients : [Ingredient]
     var directions : [String]
     
     init (
@@ -25,7 +25,7 @@ struct Recipe : Decodable, Identifiable {
         totalTime : String,
         servings : Int,
         featured : Bool,
-        ingredients : [String],
+        ingredients : [Ingredient],
         directions : [String]
     ){
         self.name = name
