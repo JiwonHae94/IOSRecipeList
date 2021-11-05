@@ -14,6 +14,7 @@ struct Recipe : Decodable, Identifiable, Hashable {
     var featured : Bool
     var servings : Int
     var ingredients : [Ingredient]
+    var highlights : [String]
     var directions : [String]
     
     init (
@@ -26,6 +27,7 @@ struct Recipe : Decodable, Identifiable, Hashable {
         servings : Int,
         featured : Bool,
         ingredients : [Ingredient],
+        highlights : [String],
         directions : [String]
     ){
         self.name = name
@@ -38,6 +40,7 @@ struct Recipe : Decodable, Identifiable, Hashable {
         self.directions = directions
         self.featured = featured
         self.servings = servings
+        self.highlights = highlights
     }
     
 }

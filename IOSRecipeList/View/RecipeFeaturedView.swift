@@ -10,6 +10,7 @@ import SwiftUI
 struct RecipeFeaturedView: View {
     @EnvironmentObject var recipeModel:RecipeViewModel
     @State var isDetailViewShowing = false
+    @State var tabSelectionIndex = 0
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
@@ -18,9 +19,9 @@ struct RecipeFeaturedView: View {
                 .fontWeight(.bold)
                 .padding(.leading)
                 .padding(.top, 40)
+            
             GeometryReader{ geo in
-                
-                TabView {
+                TabView(selection: $tabSelectionIndex) {
                     ForEach(0..<recipeModel.recipes.count, id: \.self){ pos in
                         
                         if recipeModel.recipes[pos].featured {
@@ -46,6 +47,7 @@ struct RecipeFeaturedView: View {
                                     }
                                 }
                             })
+                            .tag(pos)
                             .sheet(isPresented: $isDetailViewShowing){
                                 // Show the Recipe Detail View
                                 RecipeDetailView(recipe: recipeModel.recipes[pos])
@@ -63,16 +65,24 @@ struct RecipeFeaturedView: View {
                 .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
             }
             
-            VStack(alignment: .leading){
+            VStack(alignment: .leading, spacing: 10){
                 Text("Prepration time")
                     .font(.headline)
-                Text("1 hour")
+                Text(recipeModel.recipes[tabSelectionIndex].prepTime)
                 Text("Highlights")
                     .font(.headline)
-                Text("Healthy, Hearty")
+                Text(recipeModel.recipes[tabSelectionIndex].highlights.joined(separator: ", "))
             }
             .padding([.leading, .bottom])
-        }
+        }.onAppear(perform: {
+            initFeatureIndex()
+        })
+    }
+    
+    func initFeatureIndex(){
+        tabSelectionIndex = recipeModel.recipes.firstIndex{ (recipe) -> Bool in
+            return recipe.featured
+        } ?? 0
     }
 }
 
