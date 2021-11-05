@@ -9,7 +9,8 @@ import SwiftUI
 
 struct RecipeDetailView: View {
     var recipe : Recipe
-    @State var servings = 2
+    
+    @State var servingsSize = 2
     
     var body: some View {
         ScrollView{
@@ -21,18 +22,26 @@ struct RecipeDetailView: View {
                     .resizable()
                     .scaledToFill()
                 
-                // MARK: RecipeServing
-                VStack(alignment: .leading) {
-                    Text("Choose your serving size")
-                        .font(.headline)
-                        .padding([.top, .bottom], 5)
-
-                    HStack{
-                        ForEach(1...4, id : \.self){ pos in
-                            Text(String(pos))
-                        }
+                // MARK: Recipe Title
+                Text(recipe.name)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .padding(.leading)
+                    .padding(.top, 20)
+                
+                // MARK: Serving Size Picker
+                VStack (alignment: .leading) {
+                    Text("Select your serving size:")
+                    Picker("", selection: $servingsSize) {
+                        Text("2").tag(2)
+                        Text("4").tag(4)
+                        Text("6").tag(6)
+                        Text("8").tag(8)
                     }
-                }.padding(.horizontal)
+                    .pickerStyle(SegmentedPickerStyle())
+                    .frame(width:160)
+                }
+                .padding()
                 
                 // MARK: Ingrdients
                 VStack(alignment: .leading){
@@ -41,7 +50,7 @@ struct RecipeDetailView: View {
                         .padding([.top, .bottom], 5)
                     
                     ForEach(recipe.ingredients, id: \.self){ i in
-                        Text("· " + String(i.name))
+                        Text("· " + RecipeViewModel.getPortion(i, recipe.servings, servingsSize) + " " + String(i.name).lowercased())
                             .padding(.bottom, 2)
                             .font(.body)
                         
@@ -64,7 +73,7 @@ struct RecipeDetailView: View {
                     
                 }.padding(.horizontal)
             }
-        }.navigationBarTitle(recipe.name)
+        }
     }
 }
 

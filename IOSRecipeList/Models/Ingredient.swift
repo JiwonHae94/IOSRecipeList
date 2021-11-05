@@ -12,5 +12,5 @@ struct Ingredient : Decodable, Identifiable, Hashable {
     var name : String
     var num : Int?
     var unit : String?
-    var demon : Int?
+    var denom : Int?
 }
