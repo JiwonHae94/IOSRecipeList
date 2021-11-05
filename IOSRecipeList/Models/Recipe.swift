@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Recipe : Decodable, Identifiable {
+struct Recipe : Decodable, Identifiable, Hashable {
     
     var id : UUID?
     var name, image, description, prepTime, cookTime, totalTime : String
